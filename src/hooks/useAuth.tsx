@@ -2,13 +2,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 
-import { useNavigate } from 'react-router-dom';
 import { AuthAPI } from '../api/auth';
 import { Authentication, SignInRequest } from '../types/apitypes';
 import { toast } from './use-toast';
+import { useLocation } from 'wouter';
 
 export const useAuth = () => {
-  const navigate = useNavigate();
+  const [, navigate] = useLocation(); // ← wouter's navigate equivalent
   const queryClient = useQueryClient();
   const [authentication, setAuthentication] = useAtom(authAtom);
 

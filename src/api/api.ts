@@ -33,9 +33,8 @@ async function handleAuthSuccess(authPayload: any) {
 // Request interceptor: attach access token
 api.interceptors.request.use(
   async (config) => {
-    // const token = await getAccessToken();
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmZWU4Yzc5LTc1OGItNGU1MC1iZmJkLTk4YzFmNGQzNjU0OCIsImlhdCI6MTc3NTk5ODU4NywiZXhwIjoxNzc2MDg0OTg3fQ.vokZmyTZ9mNBfzJ04OdZMXBy2m03i69qzX-RYmO9SKo";
+    const token = await getAccessToken();
+    // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmZWU4Yzc5LTc1OGItNGU1MC1iZmJkLTk4YzFmNGQzNjU0OCIsImlhdCI6MTc3NjE3OTIzNSwiZXhwIjoxNzc2MjY1NjM1fQ.1ENPrVd73WR1WUcT04NtSkPEx9d9au-oTcD-wt9IYuA"
     if (token) {
       config.headers = config.headers || {};
       config.headers.Authorization = `Bearer ${token}`;
