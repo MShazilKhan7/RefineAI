@@ -5,18 +5,18 @@ Optimize every job application with AI. Tailor your resume, manage your applicat
 
 ---
 
-## ✨ Features
+## Features
 
-* 🔍 **AI Resume Suggestions**
+* **AI Resume Suggestions**
   Generate targeted improvements based on job descriptions
 
-* 🧠 **Interview Preparation**
+* **Interview Preparation**
   Get structured questions, answers, and key points
 
-* 📄 **Resume Management**
+* **Resume Management**
   Upload, store, and view original PDFs alongside parsed text
 
-* 🔁 **Regenerative AI Flow**
+* **Regenerative AI Flow**
   Generate new suggestions/questions without repetition
 
 ---
@@ -119,13 +119,13 @@ Optimize every job application with AI. Tailor your resume, manage your applicat
 
 ## 🔐 Security
 
-* 🔑 API Key protection between Node.js ↔ Python service
-* 🚫 AI service not exposed publicly
-* 📏 Input size validation to prevent token abuse
+* API Key protection between Node.js ↔ Python service
+* AI service not exposed publicly
+* Input size validation to prevent token abuse
 
 ---
 
-## 🧩 Architecture
+## Architecture
 
 ```
 Frontend (React)
