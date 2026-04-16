@@ -71,8 +71,8 @@ export default function Login() {
           </h2>
 
           <p className="text-muted-foreground text-lg">
-            Tailor your resume, track applications, and prepare smarter for
-            interviews — all in one place.
+            Tailor your resume, manage your applications, and prepare smarter
+            for interviews — all in one place.
           </p>
 
           <div className="text-sm text-muted-foreground">

@@ -20,7 +20,7 @@ async function handleAuthSuccess(authPayload: any) {
   const store = getDefaultStore();
   if (authPayload && authPayload.token) {
     store.set(authAtom, {
-      isAuthenticated: true,
+      // isAuthenticated: true,
       user: authPayload.user,
       accessToken: authPayload.token,
       refreshToken: authPayload.refreshToken,

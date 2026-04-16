@@ -1,11 +1,11 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useAtom } from 'jotai';
-import { atomWithStorage } from 'jotai/utils';
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useAtom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
-import { AuthAPI } from '../api/auth';
-import { Authentication, SignInRequest } from '../types/apitypes';
-import { toast } from './use-toast';
-import { useLocation } from 'wouter';
+import { AuthAPI } from "../api/auth";
+import { Authentication, SignInRequest } from "../types/apitypes";
+import { toast } from "./use-toast";
+import { useLocation } from "wouter";
 
 export const useAuth = () => {
   const [, navigate] = useLocation(); // ← wouter's navigate equivalent
@@ -25,11 +25,11 @@ export const useAuth = () => {
     mutationFn: AuthAPI.login,
     onSuccess: (data: Authentication) => {
       setAuthentication({ ...data });
-      navigate('/');
+      navigate("/");
     },
     onError: (error: any) => {
       toast({
-        title: 'Error',
+        title: "Error",
         description: error.data.message,
       });
     },
@@ -39,20 +39,19 @@ export const useAuth = () => {
     mutationFn: AuthAPI.register,
     onSuccess: (data: Authentication) => {
       setAuthentication({ ...data });
-      navigate('/');
+      navigate("/");
     },
   });
 
   const signout = () => {
     reset();
-    navigate('/login');
+    navigate("/login");
   };
 
   return {
     authentication,
     user: authentication.user,
     isLoggedIn: !!authentication.accessToken,
-
     signIn,
     signUp,
     signout,
@@ -62,11 +61,16 @@ export const useAuth = () => {
 };
 
 export const INITIAL_AUTHENTICATION_VALUE: Authentication = {
-  accessToken: '',
-  refreshToken: '',
+  accessToken: "",
+  refreshToken: "",
   user: null,
 };
 
-export const authAtom = atomWithStorage('authentication', INITIAL_AUTHENTICATION_VALUE, undefined, {
-  getOnInit: true,
-});
+export const authAtom = atomWithStorage(
+  "authentication",
+  INITIAL_AUTHENTICATION_VALUE,
+  undefined,
+  {
+    getOnInit: true,
+  },
+);
